@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coman Daniel Electrician Auto | Service Electric Auto Arad</title>
+    <title>Coman Daniel Electrician Auto | Calea Timișorii nr. 209, Arad</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -21,18 +21,19 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        display: ['"Chakra Petch"', 'sans-serif'],
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
                     },
                     colors: {
-                        asphalt: '#0B0F17',
-                        garage: '#121824',
-                        bay: '#1B2434',
-                        volt: '#F59E0B',
-                        volthover: '#D97706',
-                        spark: '#38BDF8',
-                        chrome: '#F8FAFC',
-                        alloy: '#94A3B8'
+                        voiddark: '#0C0A09',
+                        surface: '#141110',
+                        panel: '#1C1816',
+                        line: '#2C2522',
+                        copper: '#EA580C',
+                        copperbright: '#F97316',
+                        coppersoft: 'rgba(234, 88, 12, 0.14)',
+                        ink: '#F5F5F4',
+                        muted: '#A8A29E'
                     }
                 }
             }
@@ -41,32 +42,25 @@
 
     <style>
         body {
-            background-color: #0B0F17;
-            color: #F8FAFC;
+            background-color: #0C0A09;
+            color: #F5F5F4;
             overflow-x: hidden;
         }
 
-        .hero-grid {
-            background:
-                radial-gradient(circle at 80% 25%, rgba(245, 158, 11, 0.12) 0%, transparent 45%),
-                radial-gradient(circle at 15% 80%, rgba(56, 189, 248, 0.08) 0%, transparent 45%),
-                linear-gradient(180deg, #0B0F17 0%, #121824 100%);
+        .tech-grid {
+            background-image:
+                linear-gradient(to right, rgba(245, 245, 244, 0.035) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(245, 245, 244, 0.035) 1px, transparent 1px);
+            background-size: 32px 32px;
         }
 
-        .tech-pattern {
-            background-image: linear-gradient(to right, rgba(248, 250, 252, 0.03) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(248, 250, 252, 0.03) 1px, transparent 1px);
-            background-size: 36px 36px;
+        .bay-card {
+            transition: all 0.22s ease;
         }
 
-        .service-card {
-            transition: all 0.25s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-4px);
-            border-color: #F59E0B;
-            box-shadow: 0 16px 30px -12px rgba(245, 158, 11, 0.2);
+        .bay-card:hover {
+            border-color: #EA580C;
+            transform: translateY(-3px);
         }
 
         ::-webkit-scrollbar {
@@ -74,488 +68,523 @@
         }
 
         ::-webkit-scrollbar-track {
-            background: #0B0F17;
+            background: #0C0A09;
         }
 
         ::-webkit-scrollbar-thumb {
-            background: #283449;
+            background: #2C2522;
             border-radius: 4px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: #F59E0B;
+            background: #EA580C;
         }
     </style>
 </head>
 
-<body class="font-sans antialiased selection:bg-volt selection:text-asphalt">
+<body class="font-sans antialiased selection:bg-copper selection:text-white">
 
-    <header id="navbar" class="fixed top-0 left-0 right-0 z-40 bg-asphalt/95 backdrop-blur-md border-b border-bay">
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-40 bg-voiddark/95 backdrop-blur-md border-b border-line">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
+            <div class="flex justify-between items-center h-16">
                 <a href="#acasa" class="flex items-center space-x-3 group">
                     <div
-                        class="w-11 h-11 rounded bg-volt text-asphalt flex items-center justify-center shadow-md shadow-volt/20 group-hover:bg-volthover transition">
-                        <i class="fa-solid fa-bolt text-lg"></i>
+                        class="w-9 h-9 rounded-md bg-copper text-white flex items-center justify-center shadow-sm group-hover:bg-copperbright transition">
+                        <i class="fa-solid fa-bolt text-sm"></i>
                     </div>
-                    <div>
-                        <span
-                            class="font-display text-lg sm:text-2xl font-bold uppercase tracking-wide text-chrome block leading-none">
-                            COMAN DANIEL <span class="text-volt">ELECTRICIAN AUTO</span>
+                    <div class="leading-tight">
+                        <span class="font-bold text-sm sm:text-base tracking-tight text-ink block">
+                            Coman Daniel <span class="text-copper">Electric Auto</span>
                         </span>
-                        <span class="text-[11px] uppercase tracking-[0.2em] text-alloy font-semibold block mt-1">
-                            Calea Timișorii nr. 209 • Arad
+                        <span class="font-mono text-[10px] text-muted block">
+                            ARAD • CALEA TIMIȘORII 209
                         </span>
                     </div>
                 </a>
 
-                <nav class="hidden lg:flex items-center space-x-7">
-                    <a href="#acasa"
-                        class="text-xs font-bold uppercase tracking-wider text-chrome/80 hover:text-volt transition">Acasă</a>
-                    <a href="#servicii"
-                        class="text-xs font-bold uppercase tracking-wider text-chrome/80 hover:text-volt transition">Servicii
-                        Auto</a>
-                    <a href="#despre"
-                        class="text-xs font-bold uppercase tracking-wider text-chrome/80 hover:text-volt transition">Atelier
-                        & Zone</a>
-                    <a href="#contact"
-                        class="text-xs font-bold uppercase tracking-wider text-chrome/80 hover:text-volt transition">Program
-                        & Contact</a>
+                <nav class="hidden lg:flex items-center space-x-7 text-xs font-medium text-muted">
+                    <a href="#servicii" class="hover:text-ink transition">Servicii</a>
+                    <a href="#diagnoza" class="hover:text-ink transition">Diagnoză & Reparații</a>
+                    <a href="#cum-lucram" class="hover:text-ink transition">Cum lucrăm</a>
+                    <a href="#program" class="hover:text-ink transition">Program & Locație</a>
+                    <a href="#contact" class="hover:text-ink transition">Contact</a>
                 </nav>
 
-                <div class="flex items-center space-x-3">
+                <div class="flex items-center space-x-2.5">
                     <button onclick="toggleListModal()"
-                        class="relative py-2.5 px-4 rounded bg-bay hover:bg-volt text-chrome hover:text-asphalt border border-white/10 transition flex items-center gap-2 text-xs font-bold uppercase tracking-wider">
-                        <i class="fa-solid fa-wrench text-volt group-hover:text-asphalt"></i>
-                        <span class="hidden sm:inline">Lucrări Selectate</span>
+                        class="py-1.5 px-3 rounded-md bg-panel hover:bg-line text-ink border border-line text-xs font-mono flex items-center gap-2 transition">
+                        <i class="fa-solid fa-list-check text-copper text-[11px]"></i>
+                        <span class="hidden sm:inline">Fișă Lucrări</span>
                         <span id="list-badge"
-                            class="bg-volt text-asphalt text-[11px] font-bold w-5 h-5 rounded-sm flex items-center justify-center">0</span>
+                            class="bg-copper text-white text-[10px] font-bold px-1.5 py-0.5 rounded">0</span>
                     </button>
 
+                    <a href="tel:+40724230463"
+                        class="py-1.5 px-3.5 rounded-md bg-copper hover:bg-copperbright text-white text-xs font-mono font-semibold flex items-center gap-2 transition shadow-sm">
+                        <i class="fa-solid fa-phone text-[11px]"></i>
+                        <span>0724 230 463</span>
+                    </a>
+
                     <button id="mobile-menu-btn"
-                        class="lg:hidden p-2.5 rounded bg-bay text-chrome hover:bg-volt hover:text-asphalt transition focus:outline-none"
+                        class="lg:hidden p-2 rounded-md bg-panel border border-line text-ink hover:bg-line transition"
                         aria-label="Meniu">
-                        <i class="fa-solid fa-bars text-lg"></i>
+                        <i class="fa-solid fa-bars text-sm"></i>
                     </button>
                 </div>
             </div>
         </div>
 
-        <div id="mobile-menu" class="hidden lg:hidden bg-garage border-b border-bay px-4 pt-3 pb-6 space-y-2">
-            <a href="#acasa"
-                class="mobile-link block px-4 py-3 rounded text-sm font-bold uppercase tracking-wider text-chrome hover:bg-bay hover:text-volt">Acasă</a>
+        <div id="mobile-menu"
+            class="hidden lg:hidden bg-surface border-b border-line px-4 pt-2 pb-5 space-y-1.5 text-sm">
             <a href="#servicii"
-                class="mobile-link block px-4 py-3 rounded text-sm font-bold uppercase tracking-wider text-chrome hover:bg-bay hover:text-volt">Servicii
-                Electric Auto</a>
-            <a href="#despre"
-                class="mobile-link block px-4 py-3 rounded text-sm font-bold uppercase tracking-wider text-chrome hover:bg-bay hover:text-volt">Atelier
-                & Reper Arad</a>
+                class="mobile-link block px-3 py-2.5 rounded-md text-muted hover:bg-panel hover:text-ink">Servicii</a>
+            <a href="#diagnoza"
+                class="mobile-link block px-3 py-2.5 rounded-md text-muted hover:bg-panel hover:text-ink">Diagnoză &
+                Reparații</a>
+            <a href="#cum-lucram"
+                class="mobile-link block px-3 py-2.5 rounded-md text-muted hover:bg-panel hover:text-ink">Cum lucrăm</a>
+            <a href="#program"
+                class="mobile-link block px-3 py-2.5 rounded-md text-muted hover:bg-panel hover:text-ink">Program &
+                Locație</a>
             <a href="#contact"
-                class="mobile-link block px-4 py-3 rounded text-sm font-bold uppercase tracking-wider text-chrome hover:bg-bay hover:text-volt">Program
-                & Contact</a>
+                class="mobile-link block px-3 py-2.5 rounded-md text-muted hover:bg-panel hover:text-ink">Contact</a>
         </div>
     </header>
 
-    <section id="acasa" class="hero-grid tech-pattern pt-28 pb-20 md:pt-36 md:pb-24 relative border-b border-bay">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <section id="acasa" class="pt-16 border-b border-line bg-voiddark">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 min-h-[540px]">
 
-                <div class="lg:col-span-7 space-y-6">
+                <div
+                    class="lg:col-span-7 tech-grid p-6 sm:p-10 lg:p-14 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-line relative">
                     <div
-                        class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded bg-garage border border-bay text-xs font-bold uppercase tracking-wider text-chrome">
-                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
-                        <span>Calea Timișorii nr. 209, Arad (DN69 / E671)</span>
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-panel border border-line text-xs font-mono text-ink w-fit mb-6">
+                        <span id="live-dot" class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                        <span id="live-status-text">Service activ • Calea Timișorii nr. 209, Arad</span>
                     </div>
 
                     <h1
-                        class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-chrome leading-[1.08]">
-                        DIAGNOZĂ PRECISĂ ȘI <span class="text-volt">REPARAȚII ELECTRICE AUTO</span> ÎN ARAD
+                        class="text-3xl sm:text-5xl lg:text-[54px] font-extrabold tracking-tight text-ink leading-[1.08] mb-5">
+                        Electrician Auto în Arad – <span class="text-copper">Diagnoză și Reparații</span> pe Calea
+                        Timișorii 209
                     </h1>
 
-                    <p class="text-base sm:text-lg text-alloy max-w-2xl leading-relaxed">
-                        <strong class="text-chrome">Coman Daniel Electrician Auto</strong> – intervenții rapide și
-                        sigure asupra instalațiilor electrice auto, alternatoarelor, electromotoarelor, senzorilor și
-                        modulelor electronice. Acces direct pe <strong class="text-chrome">Calea Timișorii nr.
-                            209</strong>, zona Rădăcini / Blîndețe.
+                    <p class="text-sm sm:text-base text-muted max-w-2xl leading-relaxed mb-8">
+                        Verificăm circuite electrice, alternatoare, electromotoare, consumatori paraziți și cablaje
+                        auto. Îți comunicăm clar constatarea și costul înainte de intervenție, cu acces direct din <span
+                            class="font-mono text-ink">DN69 / E671</span>.
                     </p>
 
-                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+                    <div class="flex flex-wrap items-center gap-3.5">
                         <a href="tel:+40724230463"
-                            class="px-8 py-4 rounded bg-volt hover:bg-volthover text-asphalt font-display text-base font-bold uppercase tracking-wider shadow-lg shadow-volt/20 transition flex items-center justify-center gap-3">
-                            <i class="fa-solid fa-phone-volume"></i>
-                            <span>Sună Acum: +40 724 230 463</span>
+                            class="px-5 py-3 rounded-md bg-copper hover:bg-copperbright text-white text-xs sm:text-sm font-semibold flex items-center gap-2 transition shadow-md shadow-copper/15">
+                            <i class="fa-solid fa-phone text-xs"></i>
+                            <span>Sună Acum</span>
                         </a>
                         <a href="#contact"
-                            class="px-8 py-4 rounded bg-garage hover:bg-bay text-chrome border border-bay font-display text-base font-bold uppercase tracking-wider transition flex items-center justify-center gap-3">
-                            <i class="fa-solid fa-location-dot text-volt"></i>
-                            <span>Traseu & Programare</span>
+                            class="px-5 py-3 rounded-md bg-panel hover:bg-line text-ink border border-line text-xs sm:text-sm font-medium flex items-center gap-2 transition">
+                            <i class="fa-solid fa-wrench text-copper text-xs"></i>
+                            <span>Programează Verificarea</span>
                         </a>
                     </div>
-
-                    <div class="pt-8 border-t border-bay grid grid-cols-3 gap-6 max-w-xl">
-                        <div>
-                            <p class="font-display text-2xl sm:text-3xl font-bold text-volt">DN69 / E671</p>
-                            <p class="text-xs text-alloy mt-1">Calea Timișorii 209</p>
-                        </div>
-                        <div>
-                            <p class="font-display text-2xl sm:text-3xl font-bold text-chrome">17:30</p>
-                            <p class="text-xs text-alloy mt-1">Închidere Program Zilnic</p>
-                        </div>
-                        <div>
-                            <p class="font-display text-2xl sm:text-3xl font-bold text-spark">43 km</p>
-                            <p class="text-xs text-alloy mt-1">Dinspre Timișoara</p>
-                        </div>
-                    </div>
                 </div>
 
-                <div class="lg:col-span-5">
-                    <div class="bg-garage border border-bay rounded-xl p-6 sm:p-7 shadow-2xl relative overflow-hidden">
-                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-volt via-spark to-volt">
+                <div class="lg:col-span-5 bg-surface p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
+                    <div class="flex items-center justify-between border-b border-line pb-3.5 mb-4">
+                        <div>
+                            <span class="font-mono text-[11px] uppercase tracking-wider text-copper font-semibold">Banc
+                                de Test & Repere</span>
+                            <h2 class="text-base font-bold text-ink mt-0.5">Calea Timișorii nr. 209 • Arad</h2>
                         </div>
+                        <span class="font-mono text-[11px] px-2.5 py-1 rounded bg-panel border border-line text-muted">
+                            Închide 17:30
+                        </span>
+                    </div>
 
-                        <div class="flex items-center justify-between pb-4 border-b border-bay">
-                            <div>
-                                <span class="text-[11px] uppercase tracking-widest text-volt font-bold">Repere &
-                                    Localizare</span>
-                                <h2 class="font-display text-2xl font-bold uppercase text-chrome mt-0.5">Arad • Calea
-                                    Timișorii 209</h2>
-                            </div>
-                            <span id="hero-status-pill"
-                                class="text-[11px] font-bold uppercase px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
-                                Deschis
-                            </span>
+                    <div class="rounded-lg bg-voiddark border border-line p-4 my-auto">
+                        <svg viewBox="0 0 360 205" class="w-full h-48">
+                            <rect x="0" y="0" width="360" height="205" fill="#0C0A09" />
+                            <g stroke="#1C1816" stroke-width="1">
+                                <line x1="0" y1="40" x2="360" y2="40" />
+                                <line x1="0" y1="80" x2="360" y2="80" />
+                                <line x1="0" y1="120" x2="360" y2="120" />
+                                <line x1="0" y1="160" x2="360" y2="160" />
+                                <line x1="90" y1="0" x2="90" y2="205" />
+                                <line x1="180" y1="0" x2="180" y2="205" />
+                                <line x1="270" y1="0" x2="270" y2="205" />
+                            </g>
+
+                            <path d="M192 0 L182 205" stroke="#292524" stroke-width="14" />
+                            <path d="M192 0 L182 205" stroke="#EA580C" stroke-width="2" stroke-dasharray="7 5" />
+
+                            <path d="M20 155 L110 135 L235 128 L340 108" fill="none" stroke="#44403C" stroke-width="2"
+                                stroke-dasharray="4 4" />
+
+                            <rect x="158" y="12" width="66" height="18" rx="3" fill="#EA580C" />
+                            <text x="191" y="24" fill="#FFFFFF" font-size="9.5" font-weight="bold" text-anchor="middle"
+                                font-family="JetBrains Mono, monospace">DN69 / E671</text>
+
+                            <circle cx="187" cy="96" r="14" fill="rgba(234,88,12,0.2)" />
+                            <circle cx="187" cy="96" r="5.5" fill="#F97316" stroke="#FFFFFF" stroke-width="1.5" />
+
+                            <rect x="202" y="76" width="144" height="38" rx="4" fill="#1C1816" stroke="#EA580C"
+                                stroke-width="1" />
+                            <text x="210" y="91" fill="#F5F5F4" font-size="9.5" font-weight="bold"
+                                font-family="Inter, sans-serif">Coman Daniel Electrician Auto</text>
+                            <text x="210" y="105" fill="#A8A29E" font-size="8.5"
+                                font-family="JetBrains Mono, monospace">Calea Timișorii, nr. 209</text>
+
+                            <text x="24" y="72" fill="#A8A29E" font-size="8.5" font-family="Inter, sans-serif">Str.
+                                Dumitru Bagdazar</text>
+                            <text x="200" y="148" fill="#A8A29E" font-size="8.5" font-family="Inter, sans-serif">Femes
+                                Stone SRL</text>
+                            <text x="132" y="186" fill="#F5F5F4" font-size="9" font-weight="bold"
+                                font-family="Inter, sans-serif">Rădăcini</text>
+                            <text x="278" y="64" fill="#A8A29E" font-size="9" font-weight="bold"
+                                font-family="Inter, sans-serif">MGA</text>
+                        </svg>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3 pt-4 border-t border-line mt-4 text-xs">
+                        <div class="bg-voiddark p-2.5 rounded border border-line">
+                            <span class="font-mono text-[10px] text-muted block">TELEFON DIRECT</span>
+                            <a href="tel:+40724230463" class="font-mono font-semibold text-copper hover:underline">+40
+                                724 230 463</a>
                         </div>
-
-                        <div class="my-5 rounded-lg bg-asphalt border border-bay p-4">
-                            <svg viewBox="0 0 320 175" class="w-full h-44">
-                                <rect x="0" y="0" width="320" height="175" fill="#0B0F17" />
-                                <path d="M25 145 L110 120 L215 112 L300 95" fill="none" stroke="#334155"
-                                    stroke-width="2" stroke-dasharray="5 4" />
-                                <path d="M168 0 L158 175" fill="none" stroke="#F59E0B" stroke-width="6" />
-                                <path d="M168 0 L158 175" fill="none" stroke="#0B0F17" stroke-width="1.5"
-                                    stroke-dasharray="8 6" />
-                                <path d="M10 48 L310 38" fill="none" stroke="#1E293B" stroke-width="3" />
-                                <rect x="132" y="12" width="68" height="18" rx="3" fill="#DC2626" />
-                                <text x="166" y="25" fill="#FFFFFF" font-size="10" font-weight="bold"
-                                    text-anchor="middle" font-family="sans-serif">DN69 • E671</text>
-                                <circle cx="162" cy="86" r="14" fill="#F59E0B" opacity="0.25" />
-                                <circle cx="162" cy="86" r="6" fill="#EF4444" stroke="#FFFFFF" stroke-width="2" />
-                                <rect x="176" y="70" width="128" height="32" rx="4" fill="#1B2434" stroke="#F59E0B"
-                                    stroke-width="1" />
-                                <text x="184" y="84" fill="#F8FAFC" font-size="9.5" font-weight="bold"
-                                    font-family="sans-serif">Coman Daniel</text>
-                                <text x="184" y="96" fill="#F59E0B" font-size="8.5" font-family="sans-serif">Electrician
-                                    Auto • Nr. 209</text>
-                                <text x="18" y="62" fill="#94A3B8" font-size="8.5" font-family="sans-serif">Str. Dumitru
-                                    Bagdazar</text>
-                                <text x="174" y="132" fill="#94A3B8" font-size="8.5" font-family="sans-serif">Femes
-                                    Stone SRL</text>
-                                <text x="115" y="164" fill="#38BDF8" font-size="9" font-weight="bold"
-                                    font-family="sans-serif">Rădăcini</text>
-                                <text x="245" y="72" fill="#94A3B8" font-size="9" font-weight="bold"
-                                    font-family="sans-serif">MGA</text>
-                            </svg>
-                        </div>
-
-                        <div class="space-y-2.5 text-xs">
-                            <div class="flex items-center justify-between text-alloy">
-                                <span><i class="fa-solid fa-road text-volt mr-2"></i>Adresă exactă:</span>
-                                <span class="text-chrome font-semibold">Calea Timișorii, nr. 209, Arad</span>
-                            </div>
-                            <div class="flex items-center justify-between text-alloy">
-                                <span><i class="fa-solid fa-phone text-volt mr-2"></i>Telefon direct:</span>
-                                <a href="tel:+40724230463" class="text-volt font-bold hover:underline">+40 724 230
-                                    463</a>
-                            </div>
-                            <div class="flex items-center justify-between text-alloy">
-                                <span><i class="fa-solid fa-clock text-volt mr-2"></i>Program astăzi:</span>
-                                <span class="text-chrome font-semibold">Închide la 17:30</span>
-                            </div>
+                        <div class="bg-voiddark p-2.5 rounded border border-line">
+                            <span class="font-mono text-[10px] text-muted block">REPER RUTA</span>
+                            <span class="font-mono font-semibold text-ink">43 km spre Timișoara</span>
                         </div>
                     </div>
                 </div>
 
             </div>
+
+            <div
+                class="grid grid-cols-1 md:grid-cols-3 bg-surface border-t border-line divide-y md:divide-y-0 md:divide-x divide-line">
+                <div class="p-4 sm:px-6 flex items-center gap-3.5">
+                    <div class="w-8 h-8 rounded bg-coppersoft text-copper flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-gauge-high text-xs"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs font-bold text-ink">Diagnoză electrică precisă</p>
+                        <p class="font-mono text-[11px] text-muted">Măsurători încărcare, tensiune & consum</p>
+                    </div>
+                </div>
+
+                <div class="p-4 sm:px-6 flex items-center gap-3.5">
+                    <div class="w-8 h-8 rounded bg-coppersoft text-copper flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-screwdriver-wrench text-xs"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs font-bold text-ink">Intervenții directe în Arad</p>
+                        <p class="font-mono text-[11px] text-muted">Alternatoare, electromotoare & cablaje</p>
+                    </div>
+                </div>
+
+                <div class="p-4 sm:px-6 flex items-center gap-3.5">
+                    <div class="w-8 h-8 rounded bg-coppersoft text-copper flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-file-invoice text-xs"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs font-bold text-ink">Comunicare transparentă</p>
+                        <p class="font-mono text-[11px] text-muted">Constatare clară înainte de reparație</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="servicii" class="py-20 bg-garage border-b border-bay">
+    <section id="servicii" class="py-16 sm:py-20 bg-voiddark border-b border-line">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-            <div class="text-center max-w-2xl mx-auto space-y-3 mb-12">
-                <span class="text-xs font-bold uppercase tracking-[0.22em] text-volt">Intervenții & Diagnoză</span>
-                <h2 class="font-display text-3xl sm:text-5xl font-bold uppercase text-chrome">
-                    Servicii Electricitate & Electronică Auto
-                </h2>
-                <p class="text-sm text-alloy">
-                    Selectează operațiunile de care are nevoie autoturismul tău pentru a le adăuga în lista de
-                    programare.
-                </p>
-            </div>
-
-            <div id="filter-buttons" class="flex flex-wrap justify-center gap-2.5 mb-12">
-                <button data-filter="toate"
-                    class="filter-btn active px-5 py-2.5 rounded text-xs font-bold uppercase tracking-wider transition bg-volt text-asphalt">
-                    Toate Serviciile
-                </button>
-                <button data-filter="diagnoza"
-                    class="filter-btn px-5 py-2.5 rounded text-xs font-bold uppercase tracking-wider transition bg-asphalt text-alloy hover:text-chrome border border-bay">
-                    Diagnoză & Senzori
-                </button>
-                <button data-filter="pornire"
-                    class="filter-btn px-5 py-2.5 rounded text-xs font-bold uppercase tracking-wider transition bg-asphalt text-alloy hover:text-chrome border border-bay">
-                    Alternator & Electromotor
-                </button>
-                <button data-filter="instalatii"
-                    class="filter-btn px-5 py-2.5 rounded text-xs font-bold uppercase tracking-wider transition bg-asphalt text-alloy hover:text-chrome border border-bay">
-                    Cablaje, Lumini & Confort
-                </button>
-            </div>
-
-            <div id="services-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            </div>
-
-        </div>
-    </section>
-
-    <section id="despre" class="py-20 bg-asphalt border-b border-bay">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-
-                <div class="lg:col-span-6 space-y-5">
-                    <span class="text-xs font-bold uppercase tracking-[0.22em] text-volt">De Ce Coman Daniel Electrician
-                        Auto</span>
-                    <h2 class="font-display text-3xl sm:text-5xl font-bold uppercase text-chrome leading-tight">
-                        Acces rapid pe <span class="text-volt">Calea Timișorii 209</span> din Arad
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+                <div>
+                    <span class="font-mono text-xs uppercase tracking-wider text-copper font-semibold">Specificații &
+                        Lucrări</span>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-ink mt-1">
+                        Servicii Electricitate Auto
                     </h2>
-                    <p class="text-alloy leading-relaxed text-sm sm:text-base">
-                        Indiferent dacă te confrunți cu o baterie care se descarcă peste noapte, un alternator defect,
-                        martori aprinși în bord sau probleme de cablaj, <strong class="text-chrome">Coman Daniel
-                            Electrician Auto</strong> îți oferă soluții practice, clare și orientate spre remedierea
-                        reală a defecțiunii.
-                    </p>
-                    <p class="text-alloy leading-relaxed text-sm sm:text-base">
-                        Amplasarea pe artera principală <strong class="text-chrome">Calea Timișorii, nr. 209 (DN69 /
-                            E671)</strong> facilitează sosirea rapidă atât din cartierele Aradului (precum Rădăcini și
-                        zonele învecinate), cât și pentru șoferii aflați în tranzit pe ruta spre Timișoara.
-                    </p>
-
-                    <div class="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                        <div class="flex items-center gap-3 bg-garage p-3.5 rounded border border-bay">
-                            <i class="fa-solid fa-check text-volt text-base"></i>
-                            <span class="font-semibold text-chrome">Verificare circuit încărcare & baterie</span>
-                        </div>
-                        <div class="flex items-center gap-3 bg-garage p-3.5 rounded border border-bay">
-                            <i class="fa-solid fa-check text-volt text-base"></i>
-                            <span class="font-semibold text-chrome">Depistare scurtcircuite & consumatori</span>
-                        </div>
-                        <div class="flex items-center gap-3 bg-garage p-3.5 rounded border border-bay">
-                            <i class="fa-solid fa-check text-volt text-base"></i>
-                            <span class="font-semibold text-chrome">Intervenții pe instalații & siguranțe</span>
-                        </div>
-                        <div class="flex items-center gap-3 bg-garage p-3.5 rounded border border-bay">
-                            <i class="fa-solid fa-check text-volt text-base"></i>
-                            <span class="font-semibold text-chrome">Contact telefonic direct: 0724 230 463</span>
-                        </div>
-                    </div>
                 </div>
 
-                <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="bg-garage p-6 rounded-xl border border-bay space-y-2.5">
-                        <div class="w-10 h-10 rounded bg-volt/15 text-volt flex items-center justify-center">
-                            <i class="fa-solid fa-car-battery text-lg"></i>
-                        </div>
-                        <h3 class="font-display text-xl font-bold uppercase text-chrome">Sistem Încărcare & Pornire</h3>
-                        <p class="text-xs text-alloy leading-relaxed">
-                            Măsurători sub sarcină, recondiționare sau înlocuire perii/punte diode alternator și
-                            verificare electromotor.
-                        </p>
-                    </div>
-
-                    <div class="bg-garage p-6 rounded-xl border border-bay space-y-2.5">
-                        <div class="w-10 h-10 rounded bg-spark/15 text-spark flex items-center justify-center">
-                            <i class="fa-solid fa-microchip text-lg"></i>
-                        </div>
-                        <h3 class="font-display text-xl font-bold uppercase text-chrome">Senzori & Comunicație</h3>
-                        <p class="text-xs text-alloy leading-relaxed">
-                            Verificare conexiuni, mufe oxidate, senzori motor, ABS/ESP și defecțiuni electrice
-                            intermitente.
-                        </p>
-                    </div>
-
-                    <div class="bg-garage p-6 rounded-xl border border-bay space-y-2.5">
-                        <div class="w-10 h-10 rounded bg-volt/15 text-volt flex items-center justify-center">
-                            <i class="fa-solid fa-lightbulb text-lg"></i>
-                        </div>
-                        <h3 class="font-display text-xl font-bold uppercase text-chrome">Iluminare & Semnalizare</h3>
-                        <p class="text-xs text-alloy leading-relaxed">
-                            Remediere defecțiuni faruri, stopuri, lumini de zi, relee și circuite de iluminat
-                            interior/exterior.
-                        </p>
-                    </div>
-
-                    <div class="bg-garage p-6 rounded-xl border border-bay space-y-2.5">
-                        <div
-                            class="w-10 h-10 rounded bg-emerald-500/15 text-emerald-400 flex items-center justify-center">
-                            <i class="fa-solid fa-shield-halved text-lg"></i>
-                        </div>
-                        <h3 class="font-display text-xl font-bold uppercase text-chrome">Siguranță & Izolație</h3>
-                        <p class="text-xs text-alloy leading-relaxed">
-                            Refacere trasee de cabluri afectate, protecție la umezeală și verificare tablou
-                            siguranțe/relee.
-                        </p>
-                    </div>
+                <div id="filter-buttons" class="flex flex-wrap gap-2">
+                    <button data-filter="toate"
+                        class="filter-btn active px-3.5 py-1.5 rounded-md text-xs font-mono font-semibold bg-copper text-white transition">
+                        Toate
+                    </button>
+                    <button data-filter="diagnoza"
+                        class="filter-btn px-3.5 py-1.5 rounded-md text-xs font-mono bg-panel text-muted hover:text-ink border border-line transition">
+                        Diagnoză & Baterie
+                    </button>
+                    <button data-filter="pornire"
+                        class="filter-btn px-3.5 py-1.5 rounded-md text-xs font-mono bg-panel text-muted hover:text-ink border border-line transition">
+                        Alternator & Pornire
+                    </button>
+                    <button data-filter="instalatii"
+                        class="filter-btn px-3.5 py-1.5 rounded-md text-xs font-mono bg-panel text-muted hover:text-ink border border-line transition">
+                        Cablaje & Lumini
+                    </button>
                 </div>
+            </div>
 
+            <div id="services-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-20 bg-garage">
+    <section id="diagnoza" class="py-16 sm:py-20 bg-surface border-b border-line">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                <div class="lg:col-span-5 space-y-4">
+                    <span class="font-mono text-xs uppercase tracking-wider text-copper font-semibold">Simptome
+                        Frecvente</span>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-ink leading-tight">
+                        Ce verificăm la autoturismul tău
+                    </h2>
+                    <p class="text-sm text-muted leading-relaxed">
+                        Defecțiunile electrice pot părea minore la început, dar afectează pornirea, încărcarea bateriei
+                        sau siguranța pe drum. La <strong class="text-ink">Coman Daniel Electrician Auto</strong> izolăm
+                        defectul pe circuitul exact, fără piese schimbate la întâmplare.
+                    </p>
+                    <div class="p-4 rounded-lg bg-voiddark border border-line font-mono text-xs text-muted space-y-1.5">
+                        <p class="text-ink font-semibold">Punct de lucru Arad:</p>
+                        <p>Adresă: Calea Timișorii, nr. 209</p>
+                        <p>Telefon: +40 724 230 463</p>
+                        <p>Program: Închide la 17:30</p>
+                    </div>
+                </div>
 
-            <div class="text-center max-w-2xl mx-auto space-y-3 mb-14">
-                <span class="text-xs font-bold uppercase tracking-[0.22em] text-volt">Adresă & Programare</span>
-                <h2 class="font-display text-3xl sm:text-5xl font-bold uppercase text-chrome">
-                    Contact & Locație în Arad
-                </h2>
-                <p class="text-sm text-alloy">
-                    Sună direct sau trimite simptomele mașinii prin formular pentru o programare rapidă.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
-
-                <div class="lg:col-span-5 space-y-6">
-                    <div class="bg-asphalt p-7 rounded-xl border border-bay space-y-6">
-
-                        <div class="flex items-start gap-4">
-                            <div
-                                class="w-11 h-11 rounded bg-garage border border-bay text-volt flex items-center justify-center shrink-0">
-                                <i class="fa-solid fa-location-dot text-lg"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-display text-lg font-bold uppercase text-chrome">Adresă</h3>
-                                <p class="text-sm text-alloy mt-0.5">Calea Timișorii nr. 209, Arad</p>
-                                <a href="https://maps.google.com/?q=Calea+Timisorii+209+Arad" target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-volt hover:underline mt-2">
-                                    <span>Deschide în Google Maps</span>
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                </a>
-                            </div>
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-voiddark p-5 rounded-lg border border-line space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="font-mono text-xs text-copper font-semibold">01 / ÎNCĂRCARE</span>
+                            <i class="fa-solid fa-car-battery text-muted text-sm"></i>
                         </div>
-
-                        <div class="flex items-start gap-4">
-                            <div
-                                class="w-11 h-11 rounded bg-garage border border-bay text-volt flex items-center justify-center shrink-0">
-                                <i class="fa-solid fa-phone text-lg"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-display text-lg font-bold uppercase text-chrome">Telefon</h3>
-                                <a href="tel:+40724230463"
-                                    class="text-lg font-bold text-volt hover:text-volthover transition block mt-0.5">
-                                    +40 724 230 463
-                                </a>
-                                <p class="text-xs text-alloy mt-1">Apel direct pentru disponibilitate și programări.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4">
-                            <div
-                                class="w-11 h-11 rounded bg-garage border border-bay text-volt flex items-center justify-center shrink-0">
-                                <i class="fa-regular fa-clock text-lg"></i>
-                            </div>
-                            <div class="w-full">
-                                <div class="flex items-center justify-between">
-                                    <h3 class="font-display text-lg font-bold uppercase text-chrome">Program</h3>
-                                    <span id="open-status-badge"
-                                        class="text-[11px] font-bold uppercase px-2.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
-                                        Verificare...
-                                    </span>
-                                </div>
-                                <p class="text-xs text-alloy mt-2">
-                                    Deschis zilnic • Închidere la <strong class="text-chrome">17:30</strong>. Pentru
-                                    intervenții în afara orelor standard, te rugăm să suni în prealabil.
-                                </p>
-                            </div>
-                        </div>
-
+                        <h3 class="text-base font-bold text-ink">Bateria se descarcă sau nu încarcă</h3>
+                        <p class="text-xs text-muted leading-relaxed">
+                            Verificăm tensiunea în repaus și în sarcină, căderile de tensiune pe cabluri, puntea de
+                            diode și regulatorul alternatorului.
+                        </p>
                     </div>
 
-                    <div class="rounded-xl overflow-hidden border border-bay h-56 bg-asphalt">
+                    <div class="bg-voiddark p-5 rounded-lg border border-line space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="font-mono text-xs text-copper font-semibold">02 / PORNIRE</span>
+                            <i class="fa-solid fa-key text-muted text-sm"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-ink">Pornire greoaie sau clic la electromotor</h3>
+                        <p class="text-xs text-muted leading-relaxed">
+                            Diagnosticăm periile, solenoidul, bucșele și traseul de masă/plus dintre acumulator și
+                            electromotor.
+                        </p>
+                    </div>
+
+                    <div class="bg-voiddark p-5 rounded-lg border border-line space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="font-mono text-xs text-copper font-semibold">03 / CABLAJE</span>
+                            <i class="fa-solid fa-plug-circle-exclamation text-muted text-sm"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-ink">Scurtcircuite, siguranțe arse & mufe</h3>
+                        <p class="text-xs text-muted leading-relaxed">
+                            Refacem firele întrerupte sau deteriorate termic, curățăm contactele oxidate și verificăm
+                            releele din panou.
+                        </p>
+                    </div>
+
+                    <div class="bg-voiddark p-5 rounded-lg border border-line space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="font-mono text-xs text-copper font-semibold">04 / ILUMINAT & CONFORT</span>
+                            <i class="fa-solid fa-lightbulb text-muted text-sm"></i>
+                        </div>
+                        <h3 class="text-base font-bold text-ink">Lumini, semnalizare, geamuri & ștergătoare</h3>
+                        <p class="text-xs text-muted leading-relaxed">
+                            Remediăm lipsa alimentării pe faruri, stopuri, comenzi geamuri electrice, închidere
+                            centralizată sau ștergătoare.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cum-lucram" class="py-16 sm:py-20 bg-voiddark border-b border-line">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mb-10">
+                <span class="font-mono text-xs uppercase tracking-wider text-copper font-semibold">Flux de Lucru</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-ink mt-1">
+                    Cum lucrăm
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
+                <div class="bg-surface p-5 rounded-lg border border-line space-y-2">
+                    <span class="font-mono text-xs font-bold text-copper">PASUL 01</span>
+                    <h3 class="text-sm font-bold text-ink">Contact & Stabilire Ora</h3>
+                    <p class="text-xs text-muted leading-relaxed">Ne suni la <span class="font-mono text-ink">+40 724
+                            230 463</span> sau trimiți cererea online cu simptomele mașinii.</p>
+                </div>
+                <div class="bg-surface p-5 rounded-lg border border-line space-y-2">
+                    <span class="font-mono text-xs font-bold text-copper">PASUL 02</span>
+                    <h3 class="text-sm font-bold text-ink">Verificare & Măsurători</h3>
+                    <p class="text-xs text-muted leading-relaxed">Controlăm circuitul electric, tensiunile, consumul și
+                        componentele implicate pe Calea Timișorii 209.</p>
+                </div>
+                <div class="bg-surface p-5 rounded-lg border border-line space-y-2">
+                    <span class="font-mono text-xs font-bold text-copper">PASUL 03</span>
+                    <h3 class="text-sm font-bold text-ink">Informare Înainte de Lucru</h3>
+                    <p class="text-xs text-muted leading-relaxed">Îți explicăm exact ce este defect și ce presupune
+                        intervenția înainte de a începe reparația.</p>
+                </div>
+                <div class="bg-surface p-5 rounded-lg border border-line space-y-2">
+                    <span class="font-mono text-xs font-bold text-copper">PASUL 04</span>
+                    <h3 class="text-sm font-bold text-ink">Probă Finală de Funcționare</h3>
+                    <p class="text-xs text-muted leading-relaxed">Verificăm parametrii finali după reparație astfel
+                        încât să pleci în siguranță la drum.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="program" class="py-16 sm:py-20 bg-surface border-b border-line">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-5 space-y-4">
+                    <span class="font-mono text-xs uppercase tracking-wider text-copper font-semibold">Orar &
+                        Acces</span>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-ink">
+                        Program & Locație în Arad
+                    </h2>
+                    <p class="text-sm text-muted leading-relaxed">
+                        Ne aflăm pe <strong class="text-ink">Calea Timișorii, nr. 209</strong>, în zona Rădăcini, pe
+                        artera DN69 / E671. Programul zilnic include închiderea la ora <span
+                            class="font-mono text-ink">17:30</span>.
+                    </p>
+                    <div class="bg-voiddark rounded-lg border border-line p-4 font-mono text-xs space-y-2">
+                        <div class="flex justify-between text-ink">
+                            <span>Program zilnic:</span>
+                            <span class="text-copper font-semibold">Închide la 17:30</span>
+                        </div>
+                        <div class="flex justify-between text-muted">
+                            <span>Adresă:</span>
+                            <span class="text-ink">Calea Timișorii nr. 209, Arad</span>
+                        </div>
+                        <div class="flex justify-between text-muted">
+                            <span>Telefon:</span>
+                            <a href="tel:+40724230463" class="text-copper hover:underline">+40 724 230 463</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="rounded-lg overflow-hidden border border-line h-72 bg-voiddark">
                         <iframe title="Harta Coman Daniel Electrician Auto Calea Timisorii 209 Arad"
                             src="https://www.openstreetmap.org/export/embed.html?bbox=21.3180%2C46.1350%2C21.3420%2C46.1500&amp;layer=mapnik&amp;marker=46.1425%2C21.3300"
                             class="w-full h-full border-0" loading="lazy">
                         </iframe>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 sm:py-20 bg-voiddark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+
+                <div class="lg:col-span-5 space-y-5">
+                    <span class="font-mono text-xs uppercase tracking-wider text-copper font-semibold">Contact
+                        Direct</span>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-ink">
+                        Solicită o Programare
+                    </h2>
+                    <p class="text-sm text-muted leading-relaxed">
+                        Sună direct la <a href="tel:+40724230463"
+                            class="font-mono text-ink font-semibold hover:text-copper">+40 724 230 463</a> sau
+                        completează formularul cu datele autoturismului și simptomele constatate.
+                    </p>
+
+                    <div class="space-y-3 pt-2">
+                        <a href="tel:+40724230463"
+                            class="flex items-center gap-3.5 p-4 rounded-lg bg-surface border border-line hover:border-copper transition">
+                            <div
+                                class="w-9 h-9 rounded bg-coppersoft text-copper flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </div>
+                            <div>
+                                <span class="font-mono text-[10px] text-muted block">TELEFON</span>
+                                <span class="font-mono text-sm font-bold text-ink">+40 724 230 463</span>
+                            </div>
+                        </a>
+
+                        <a href="https://maps.google.com/?q=Calea+Timisorii+209+Arad" target="_blank"
+                            rel="noopener noreferrer"
+                            class="flex items-center gap-3.5 p-4 rounded-lg bg-surface border border-line hover:border-copper transition">
+                            <div
+                                class="w-9 h-9 rounded bg-coppersoft text-copper flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-location-dot text-xs"></i>
+                            </div>
+                            <div>
+                                <span class="font-mono text-[10px] text-muted block">LOCAȚIE ARAD</span>
+                                <span class="text-xs sm:text-sm font-semibold text-ink">Calea Timișorii, nr. 209,
+                                    Arad</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
 
                 <div class="lg:col-span-7">
-                    <div class="bg-asphalt p-7 sm:p-10 rounded-xl border border-bay">
-                        <h3 class="font-display text-2xl sm:text-3xl font-bold uppercase text-chrome mb-2">Trimite o
-                            Cerere de Programare</h3>
-                        <p class="text-xs sm:text-sm text-alloy mb-6">Menționează marca și modelul mașinii, anul de
-                            fabricație și problema electrică întâmpinată.</p>
-
-                        <form id="contact-form" class="space-y-5">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div class="bg-surface p-6 sm:p-8 rounded-lg border border-line">
+                        <form id="contact-form" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
-                                    <label for="nume"
-                                        class="block text-xs font-bold uppercase tracking-wider text-chrome mb-2">Numele
-                                        tău *</label>
-                                    <input type="text" id="nume" required placeholder="Ex: Cristian Popa"
-                                        class="w-full px-4 py-3 rounded bg-garage border border-bay focus:border-volt outline-none text-sm text-chrome transition">
+                                    <label for="nume" class="block font-mono text-xs text-muted mb-1.5">Nume *</label>
+                                    <input type="text" id="nume" required placeholder="Ex: Adrian Moldovan"
+                                        class="w-full px-3.5 py-2.5 rounded-md bg-voiddark border border-line focus:border-copper outline-none text-sm text-ink transition">
                                 </div>
                                 <div>
-                                    <label for="telefon"
-                                        class="block text-xs font-bold uppercase tracking-wider text-chrome mb-2">Telefon
+                                    <label for="telefon" class="block font-mono text-xs text-muted mb-1.5">Telefon
                                         *</label>
                                     <input type="tel" id="telefon" required placeholder="Ex: 0724 000 000"
-                                        class="w-full px-4 py-3 rounded bg-garage border border-bay focus:border-volt outline-none text-sm text-chrome transition">
+                                        class="w-full px-3.5 py-2.5 rounded-md bg-voiddark border border-line focus:border-copper outline-none text-sm text-ink transition">
                                 </div>
                             </div>
 
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
-                                    <label for="masina"
-                                        class="block text-xs font-bold uppercase tracking-wider text-chrome mb-2">Marca,
-                                        Model & An *</label>
-                                    <input type="text" id="masina" required placeholder="Ex: VW Passat B6, 2008"
-                                        class="w-full px-4 py-3 rounded bg-garage border border-bay focus:border-volt outline-none text-sm text-chrome transition">
+                                    <label for="autoturism" class="block font-mono text-xs text-muted mb-1.5">Autoturism
+                                        (Marcă, Model, An) *</label>
+                                    <input type="text" id="autoturism" required placeholder="Ex: Skoda Octavia 2, 2007"
+                                        class="w-full px-3.5 py-2.5 rounded-md bg-voiddark border border-line focus:border-copper outline-none text-sm text-ink transition">
                                 </div>
                                 <div>
-                                    <label for="zi-dorita"
-                                        class="block text-xs font-bold uppercase tracking-wider text-chrome mb-2">Data
+                                    <label for="data-programare" class="block font-mono text-xs text-muted mb-1.5">Data
                                         dorită</label>
-                                    <input type="date" id="zi-dorita"
-                                        class="w-full px-4 py-3 rounded bg-garage border border-bay focus:border-volt outline-none text-sm text-chrome transition">
+                                    <input type="date" id="data-programare"
+                                        class="w-full px-3.5 py-2.5 rounded-md bg-voiddark border border-line focus:border-copper outline-none text-sm text-ink transition">
                                 </div>
                             </div>
 
                             <div>
-                                <label for="mesaj"
-                                    class="block text-xs font-bold uppercase tracking-wider text-chrome mb-2">Descrierea
-                                    problemei electrice *</label>
+                                <label for="mesaj" class="block font-mono text-xs text-muted mb-1.5">Descrierea
+                                    defecțiunii *</label>
                                 <textarea id="mesaj" rows="4" required
-                                    placeholder="Ex: Se descarcă bateria peste noapte, nu mai pornește la cheie sau nu funcționează lumina de întâlnire..."
-                                    class="w-full px-4 py-3 rounded bg-garage border border-bay focus:border-volt outline-none text-sm text-chrome transition"></textarea>
+                                    placeholder="Detaliază problema (încărcare alternator, electromotor, consumator baterie, lumini, cablaj)..."
+                                    class="w-full px-3.5 py-2.5 rounded-md bg-voiddark border border-line focus:border-copper outline-none text-sm text-ink transition"></textarea>
                             </div>
 
                             <button type="submit"
-                                class="w-full py-4 rounded bg-volt hover:bg-volthover text-asphalt font-display text-base font-bold uppercase tracking-wider shadow-lg shadow-volt/20 transition flex items-center justify-center gap-2">
-                                <i class="fa-solid fa-paper-plane"></i>
+                                class="w-full py-3 rounded-md bg-copper hover:bg-copperbright text-white text-sm font-semibold transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane text-xs"></i>
                                 <span>Trimite Solicitarea</span>
                             </button>
                         </form>
 
                         <div id="form-feedback"
-                            class="hidden mt-6 p-4 rounded bg-emerald-950/80 border border-emerald-500/40 text-emerald-200 text-sm flex items-start gap-3">
-                            <i class="fa-solid fa-circle-check text-emerald-400 text-lg mt-0.5"></i>
+                            class="hidden mt-4 p-4 rounded-md bg-emerald-950/60 border border-emerald-500/40 text-emerald-200 text-xs flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-emerald-400 text-base mt-0.5"></i>
                             <div>
-                                <p class="font-bold uppercase tracking-wide">Solicitare trimisă!</p>
-                                <p class="text-xs mt-1 text-emerald-300/90">Vei fi contactat telefonic în cel mai scurt
-                                    timp pentru confirmarea programării pe Calea Timișorii nr. 209.</p>
+                                <p class="font-bold text-sm">Solicitare înregistrată.</p>
+                                <p class="mt-0.5 text-emerald-300/90">Vei fi contactat telefonic pentru stabilirea
+                                    detaliilor pe Calea Timișorii nr. 209, Arad.</p>
                             </div>
                         </div>
                     </div>
@@ -565,217 +594,150 @@
         </div>
     </section>
 
-    <footer class="bg-asphalt text-alloy pt-14 pb-8 border-t border-bay">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10 border-b border-bay">
-
-                <div class="space-y-3">
-                    <div class="flex items-center space-x-3">
-                        <div class="w-9 h-9 rounded bg-volt text-asphalt flex items-center justify-center">
-                            <i class="fa-solid fa-bolt text-sm"></i>
-                        </div>
-                        <span class="font-display text-xl font-bold uppercase tracking-wide text-chrome">Coman Daniel
-                            Electrician Auto</span>
-                    </div>
-                    <p class="text-xs text-alloy leading-relaxed max-w-sm">
-                        Service electricitate auto în Arad, pe Calea Timișorii nr. 209. Diagnoză, reparații alternatoare
-                        și electromotoare, cablaje și iluminat auto.
-                    </p>
-                </div>
-
-                <div class="space-y-2">
-                    <h4 class="font-display text-sm font-bold uppercase tracking-wider text-chrome">Navigare</h4>
-                    <ul class="space-y-1.5 text-xs">
-                        <li><a href="#acasa" class="hover:text-volt transition">Acasă</a></li>
-                        <li><a href="#servicii" class="hover:text-volt transition">Servicii Electric Auto</a></li>
-                        <li><a href="#despre" class="hover:text-volt transition">Atelier & Zone Arad</a></li>
-                        <li><a href="#contact" class="hover:text-volt transition">Program & Contact</a></li>
-                    </ul>
-                </div>
-
-                <div class="space-y-2">
-                    <h4 class="font-display text-sm font-bold uppercase tracking-wider text-chrome">Contact Direct</h4>
-                    <p class="text-xs flex items-center gap-2">
-                        <i class="fa-solid fa-location-dot text-volt"></i> Calea Timișorii nr. 209, Arad
-                    </p>
-                    <p class="text-xs flex items-center gap-2">
-                        <i class="fa-solid fa-phone text-volt"></i> <a href="tel:+40724230463"
-                            class="hover:text-chrome transition">+40 724 230 463</a>
-                    </p>
-                    <p class="text-xs flex items-center gap-2">
-                        <i class="fa-regular fa-clock text-volt"></i> Închide la 17:30
-                    </p>
-                </div>
-
+    <footer class="bg-surface text-muted py-10 border-t border-line text-xs">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>
+                <p class="font-bold text-ink">Coman Daniel Electrician Auto</p>
+                <p class="font-mono text-[11px] text-muted mt-0.5">Calea Timișorii nr. 209, Arad • Tel: +40 724 230 463
+                </p>
             </div>
-
-            <div class="pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-alloy/70 gap-4">
-                <p>&copy; <span id="current-year"></span> Coman Daniel Electrician Auto • Arad. Toate drepturile
-                    rezervate.</p>
-                <p>Calea Timișorii nr. 209, Arad</p>
-            </div>
+            <p class="font-mono text-[11px] text-muted">
+                &copy; <span id="current-year"></span> Toate drepturile rezervate.
+            </p>
         </div>
     </footer>
 
-    <div id="list-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4">
-        <div
-            class="bg-garage rounded-xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-bay relative max-h-[90vh] flex flex-col">
-            <div class="flex items-center justify-between pb-4 border-b border-bay">
-                <div class="flex items-center gap-2.5">
-                    <i class="fa-solid fa-wrench text-volt text-lg"></i>
-                    <h3 class="font-display text-xl font-bold uppercase text-chrome">Lucrări Selectate</h3>
-                </div>
+    <div id="list-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/75 backdrop-blur-sm p-4">
+        <div class="bg-surface rounded-lg max-w-md w-full p-6 border border-line shadow-2xl max-h-[88vh] flex flex-col">
+            <div class="flex items-center justify-between pb-3 border-b border-line">
+                <h3 class="font-mono text-sm font-bold text-ink">Fișă Lucrări Selectate</h3>
                 <button onclick="toggleListModal()"
-                    class="w-8 h-8 rounded bg-asphalt hover:bg-volt hover:text-asphalt text-chrome flex items-center justify-center transition">
-                    <i class="fa-solid fa-xmark"></i>
+                    class="w-7 h-7 rounded bg-voiddark hover:bg-line text-muted hover:text-ink flex items-center justify-center transition">
+                    <i class="fa-solid fa-xmark text-xs"></i>
                 </button>
             </div>
 
-            <div id="selected-list-container" class="py-4 overflow-y-auto flex-1 space-y-3">
+            <div id="selected-list-container" class="py-4 overflow-y-auto flex-1 space-y-2.5">
             </div>
 
-            <div class="pt-4 border-t border-bay space-y-4">
-                <p class="text-[11px] text-alloy">
-                    * Constatarea și costul exact se stabilesc în funcție de defectul identificat pe autoturism.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-3">
-                    <button onclick="transferListToForm()" id="transfer-btn"
-                        class="flex-1 py-3 px-5 rounded bg-volt hover:bg-volthover text-asphalt font-display text-sm font-bold uppercase tracking-wider transition">
-                        Trimite spre Programare
-                    </button>
-                    <button onclick="clearList()"
-                        class="py-3 px-4 rounded bg-asphalt hover:bg-bay text-alloy hover:text-chrome text-xs font-bold uppercase tracking-wider transition border border-bay">
-                        Golește
-                    </button>
-                </div>
+            <div class="pt-3 border-t border-line flex gap-2.5">
+                <button onclick="transferListToForm()" id="transfer-btn"
+                    class="flex-1 py-2.5 px-4 rounded-md bg-copper hover:bg-copperbright text-white text-xs font-semibold transition">
+                    Adaugă în Formular
+                </button>
+                <button onclick="clearList()"
+                    class="py-2.5 px-3.5 rounded-md bg-voiddark hover:bg-line text-muted hover:text-ink border border-line text-xs font-mono transition">
+                    Golește
+                </button>
             </div>
         </div>
     </div>
 
     <div id="toast-notification"
-        class="fixed bottom-5 right-5 z-50 transform translate-y-24 opacity-0 transition-all duration-300 bg-garage text-chrome px-5 py-3.5 rounded shadow-2xl flex items-center gap-3 text-xs font-bold uppercase tracking-wider border-l-4 border-volt">
-        <i class="fa-solid fa-bolt text-volt text-base"></i>
-        <span id="toast-message">Adăugat în listă!</span>
+        class="fixed bottom-5 right-5 z-50 transform translate-y-24 opacity-0 transition-all duration-300 bg-surface text-ink px-4 py-3 rounded-md shadow-xl flex items-center gap-2.5 text-xs font-mono border border-copper">
+        <i class="fa-solid fa-check text-copper"></i>
+        <span id="toast-message">Adăugat în fișă</span>
     </div>
 
     <script>
-        const autoServices = [
+        const servicesData = [
             {
                 id: 1,
-                name: "Diagnoză & Căutare Consumatori Paraziți",
+                code: "SVC-01",
+                name: "Diagnoză & Consumatori Paraziți",
                 category: "diagnoza",
-                categoryLabel: "Diagnoză & Senzori",
-                description: "Identificarea pierderilor de curent care descarcă bateria în staționare și verificarea circuitelor electrice.",
-                svgType: "battery",
-                urgent: true
+                tag: "Baterie / Curent",
+                description: "Măsurarea curentului de repaus, identificarea consumatorilor care descarcă bateria și verificarea căderilor de tensiune."
             },
             {
                 id: 2,
-                name: "Reparație & Verificare Alternator",
+                code: "SVC-02",
+                name: "Reparație Alternator & Încărcare",
                 category: "pornire",
-                categoryLabel: "Alternator & Electromotor",
-                description: "Testare tensiune și curent de încărcare, înlocuire perii colectoare, rulmenți sau punte de diode.",
-                svgType: "alternator",
-                urgent: true
+                tag: "12V / 24V Încărcare",
+                description: "Testare debit și tensiune de încărcare, înlocuire punte diode, regulator, rulmenți sau perii colectoare."
             },
             {
                 id: 3,
+                code: "SVC-03",
                 name: "Reparație Electromotor",
                 category: "pornire",
-                categoryLabel: "Alternator & Electromotor",
-                description: "Remedierea problemelor de pornire la cheie, bucșe, solenoid, perii sau contacte uzate.",
-                svgType: "starter"
+                tag: "Circuit Pornire",
+                description: "Verificare și remediere defecțiuni la pornire: solenoid, perii, bucșe, contacte și conexiuni de putere."
             },
             {
                 id: 4,
+                code: "SVC-04",
                 name: "Refacere Cablaje & Scurtcircuite",
                 category: "instalatii",
-                categoryLabel: "Cablaje, Lumini & Confort",
-                description: "Repararea firelor întrerupte, topite sau roase, refacere mufe, mase și izolație de protecție.",
-                svgType: "wiring"
+                tag: "Cablaj & Mase",
+                description: "Localizare și remediere scurtcircuite, fire întrerupte, mufe topite sau oxidate și refacere puncte de masă."
             },
             {
                 id: 5,
+                code: "SVC-05",
                 name: "Senzori, Relee & Siguranțe Auto",
                 category: "diagnoza",
-                categoryLabel: "Diagnoză & Senzori",
-                description: "Verificare circuite senzori, înlocuire relee/siguranțe arse și eliminarea contactelor imperfecte.",
-                svgType: "sensor"
+                tag: "Control & Protecție",
+                description: "Verificare continuitate circuite senzori, înlocuire relee și siguranțe arse și controlul alimentărilor."
             },
             {
                 id: 6,
-                name: "Lumini, Faruri, Stopuri & Semnalizare",
+                code: "SVC-06",
+                name: "Lumini, Faruri & Semnalizare",
                 category: "instalatii",
-                categoryLabel: "Cablaje, Lumini & Confort",
-                description: "Depistare și remediere lipsă fază scurtă/lungă, stop frână, avarii, proiectoare și iluminat habitaclu.",
-                svgType: "lights"
+                tag: "Iluminare",
+                description: "Remediere defecțiuni la faza scurtă/lungă, lumini de zi, stop frână, avarii și circuite de iluminat."
             },
             {
                 id: 7,
-                name: "Geamuri Electrice, Închidere & Ștergătoare",
+                code: "SVC-07",
+                name: "Geamuri Electrice & Ștergătoare",
                 category: "instalatii",
-                categoryLabel: "Cablaje, Lumini & Confort",
-                description: "Intervenții pe circuitele de confort: comanda geamurilor, motorase ștergătoare, blocări și alarme.",
-                svgType: "comfort"
+                tag: "Circuite Confort",
+                description: "Diagnosticare și reparare circuite pentru geamuri electrice, ștergătoare parbriz, încuietori și relee."
             },
             {
                 id: 8,
-                name: "Verificare Completă Instalație Înainte de Drum",
+                code: "SVC-08",
+                name: "Verificare Instalație Înainte de Drum",
                 category: "diagnoza",
-                categoryLabel: "Diagnoză & Senzori",
-                description: "Control preventiv al bateriei, încărcării, luminilor și conexiunilor critice pentru deplasări sigure.",
-                svgType: "check"
+                tag: "Control Preventiv",
+                description: "Verificare sumară a acumulatorului, încărcării, luminilor și conexiunilor principale înainte de plecare."
             }
         ];
-
-        function getAutoSvg(type) {
-            const svgs = {
-                battery: `<svg viewBox="0 0 200 110" class="w-full h-36 bg-asphalt p-4"><rect x="45" y="34" width="110" height="54" rx="6" fill="#121824" stroke="#F59E0B" stroke-width="2"/><rect x="62" y="24" width="16" height="10" rx="2" fill="#EF4444"/><rect x="122" y="24" width="16" height="10" rx="2" fill="#38BDF8"/><path d="M104 46 L90 64 L102 64 L96 78 L112 58 L100 58 Z" fill="#F59E0B"/></svg>`,
-                alternator: `<svg viewBox="0 0 200 110" class="w-full h-36 bg-asphalt p-4"><circle cx="100" cy="56" r="30" fill="#121824" stroke="#94A3B8" stroke-width="3"/><circle cx="100" cy="56" r="18" fill="none" stroke="#F59E0B" stroke-width="2" stroke-dasharray="6 4"/><circle cx="100" cy="56" r="7" fill="#38BDF8"/></svg>`,
-                starter: `<svg viewBox="0 0 200 110" class="w-full h-36 bg-asphalt p-4"><rect x="52" y="36" width="76" height="40" rx="5" fill="#121824" stroke="#94A3B8" stroke-width="2"/><rect x="128" y="44" width="22" height="24" rx="2" fill="#F59E0B"/><line x1="68" y1="44" x2="68" y2="68" stroke="#38BDF8" stroke-width="2"/><line x1="82" y1="44" x2="82" y2="68" stroke="#38BDF8" stroke-width="2"/></svg>`,
-                wiring: `<svg viewBox="0 0 200 110" class="w-full h-36 bg-asphalt p-4"><path d="M30 42 C70 42 80 72 120 72 L170 72" fill="none" stroke="#EF4444" stroke-width="3"/><path d="M30 68 C70 68 80 38 120 38 L170 38" fill="none" stroke="#F59E0B" stroke-width="3"/><circle cx="100" cy="55" r="8" fill="#121824" stroke="#38BDF8" stroke-width="2"/></svg>`,
-                sensor: `<svg viewBox="0 0 200 110" class="w-full h-36 bg-asphalt p-4"><rect x="65" y="30" width="70" height="50" rx="6" fill="#121824" stroke="#38BDF8" stroke-width="2"/><circle cx="88" cy="55" r="8" fill="#F59E0B"/><circle cx="112" cy="55" r="8" fill="#1B2434" stroke="#94A3B8"/></svg>`,
-                lights: `<svg viewBox="0 0 200 110" class="w-full h-36 bg-asphalt p-4"><circle cx="72" cy="55" r="20" fill="#121824" stroke="#F59E0B" stroke-width="2"/><path d="M96 42 L155 30 M96 55 L160 55 M96 68 L155 80" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round"/></svg>`,
-                comfort: `<svg viewBox="0 0 200 110" class="w-full h-36 bg-asphalt p-4"><rect x="55" y="28" width="90" height="56" rx="8" fill="#121824" stroke="#94A3B8" stroke-width="2"/><rect x="72" y="42" width="56" height="28" rx="4" fill="#1B2434"/><circle cx="100" cy="56" r="6" fill="#38BDF8"/></svg>`,
-                check: `<svg viewBox="0 0 200 110" class="w-full h-36 bg-asphalt p-4"><circle cx="100" cy="55" r="30" fill="#121824" stroke="#10B981" stroke-width="2.5"/><path d="M85 56 L95 66 L116 45" fill="none" stroke="#10B981" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`
-            };
-            return svgs[type] || svgs.battery;
-        }
 
         const servicesGrid = document.getElementById('services-grid');
         const filterBtns = document.querySelectorAll('.filter-btn');
 
         function renderServices(filter = 'toate') {
             servicesGrid.innerHTML = '';
-            const items = filter === 'toate'
-                ? autoServices
-                : autoServices.filter(s => s.category === filter);
+            const list = filter === 'toate'
+                ? servicesData
+                : servicesData.filter(item => item.category === filter);
 
-            items.forEach(service => {
+            list.forEach(item => {
                 const card = document.createElement('div');
-                card.className = 'bg-asphalt rounded-xl overflow-hidden border border-bay service-card flex flex-col justify-between';
+                card.className = 'bg-surface rounded-lg border border-line bay-card p-5 flex flex-col justify-between';
                 card.innerHTML = `
                     <div>
-                        <div class="relative border-b border-bay">
-                            ${getAutoSvg(service.svgType)}
-                            <span class="absolute top-3 left-3 bg-garage/95 text-alloy text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded border border-bay">
-                                ${service.categoryLabel}
-                            </span>
-                            ${service.urgent ? '<span class="absolute top-3 right-3 bg-volt text-asphalt text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">Frecvent</span>' : ''}
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                            <span class="font-mono text-[11px] font-semibold text-copper">${item.code}</span>
+                            <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-voiddark border border-line text-muted">${item.tag}</span>
                         </div>
-                        <div class="p-5">
-                            <h3 class="font-display text-lg font-bold uppercase text-chrome leading-snug">
-                                ${service.name}
-                            </h3>
-                            <p class="text-xs text-alloy mt-2 leading-relaxed">
-                                ${service.description}
-                            </p>
-                        </div>
+                        <h3 class="text-base font-bold text-ink leading-snug mb-2">
+                            ${item.name}
+                        </h3>
+                        <p class="text-xs text-muted leading-relaxed">
+                            ${item.description}
+                        </p>
                     </div>
-                    <div class="px-5 pb-5 pt-3 border-t border-bay/60 flex justify-end">
-                        <button onclick="addServiceToList('${service.name.replace(/'/g, "\\'")}')" class="px-4 py-2 rounded bg-garage hover:bg-volt text-chrome hover:text-asphalt border border-bay hover:border-volt text-xs font-bold uppercase tracking-wider transition flex items-center gap-1.5">
-                            <i class="fa-solid fa-plus text-volt group-hover:text-asphalt"></i>
-                            <span>Adaugă în listă</span>
+                    <div class="pt-4 mt-4 border-t border-line flex items-center justify-between">
+                        <span class="font-mono text-[11px] text-muted">Arad • Nr. 209</span>
+                        <button onclick="addToList('${item.name.replace(/'/g, "\\'")}')" class="px-3 py-1.5 rounded bg-voiddark hover:bg-copper text-ink hover:text-white border border-line hover:border-copper font-mono text-[11px] font-medium transition flex items-center gap-1.5">
+                            <i class="fa-solid fa-plus text-[10px]"></i>
+                            <span>Selectează</span>
                         </button>
                     </div>
                 `;
@@ -786,32 +748,32 @@
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 filterBtns.forEach(b => {
-                    b.classList.remove('bg-volt', 'text-asphalt');
-                    b.classList.add('bg-asphalt', 'text-alloy', 'border', 'border-bay');
+                    b.classList.remove('bg-copper', 'text-white', 'font-semibold');
+                    b.classList.add('bg-panel', 'text-muted', 'border', 'border-line');
                 });
-                btn.classList.remove('bg-asphalt', 'text-alloy', 'border', 'border-bay');
-                btn.classList.add('bg-volt', 'text-asphalt');
+                btn.classList.remove('bg-panel', 'text-muted', 'border', 'border-line');
+                btn.classList.add('bg-copper', 'text-white', 'font-semibold');
                 renderServices(btn.getAttribute('data-filter'));
             });
         });
 
-        let selectedList = [];
+        let selectedItems = [];
 
-        function addServiceToList(name) {
-            if (!selectedList.includes(name)) {
-                selectedList.push(name);
+        function addToList(name) {
+            if (!selectedItems.includes(name)) {
+                selectedItems.push(name);
             }
             updateListUI();
             showToast(`Adăugat: ${name}`);
         }
 
-        function removeServiceFromList(index) {
-            selectedList.splice(index, 1);
+        function removeFromList(index) {
+            selectedItems.splice(index, 1);
             updateListUI();
         }
 
         function clearList() {
-            selectedList = [];
+            selectedItems = [];
             updateListUI();
         }
 
@@ -820,14 +782,14 @@
             const container = document.getElementById('selected-list-container');
             const transferBtn = document.getElementById('transfer-btn');
 
-            badge.textContent = selectedList.length;
+            badge.textContent = selectedItems.length;
 
-            if (selectedList.length === 0) {
+            if (selectedItems.length === 0) {
                 container.innerHTML = `
-                    <div class="text-center py-8 text-alloy space-y-2">
-                        <i class="fa-solid fa-wrench text-2xl text-bay"></i>
-                        <p class="text-sm font-semibold text-chrome">Lista este goală.</p>
-                        <p class="text-xs">Selectează unul sau mai multe servicii din secțiunea de mai sus.</p>
+                    <div class="text-center py-8 text-muted space-y-1.5">
+                        <i class="fa-solid fa-clipboard-list text-xl text-line"></i>
+                        <p class="text-xs font-medium text-ink">Niciun serviciu selectat.</p>
+                        <p class="font-mono text-[11px]">Apasă „Selectează” pe cardurile de mai sus.</p>
                     </div>
                 `;
                 transferBtn.disabled = true;
@@ -835,10 +797,10 @@
             } else {
                 transferBtn.disabled = false;
                 transferBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-                container.innerHTML = selectedList.map((item, idx) => `
-                    <div class="flex items-center justify-between bg-asphalt p-3.5 rounded-lg border border-bay">
-                        <span class="text-xs sm:text-sm font-semibold text-chrome pr-2">${item}</span>
-                        <button onclick="removeServiceFromList(${idx})" class="w-8 h-8 rounded bg-garage hover:bg-red-600 text-alloy hover:text-white transition text-xs shrink-0">
+                container.innerHTML = selectedItems.map((name, idx) => `
+                    <div class="flex items-center justify-between bg-voiddark p-3 rounded border border-line">
+                        <span class="text-xs font-medium text-ink pr-2">${name}</span>
+                        <button onclick="removeFromList(${idx})" class="w-7 h-7 rounded bg-surface hover:bg-red-600 text-muted hover:text-white transition text-xs shrink-0">
                             <i class="fa-solid fa-trash"></i>
                         </button>
                     </div>
@@ -858,25 +820,25 @@
         }
 
         function transferListToForm() {
-            if (selectedList.length === 0) return;
-            const lines = selectedList.map(s => `- ${s}`).join('\n');
-            const msgInput = document.getElementById('mesaj');
-            msgInput.value = `Bună ziua! Doresc o programare pentru:\n${lines}\n\nDetalii suplimentare: `;
+            if (selectedItems.length === 0) return;
+            const lines = selectedItems.map(s => `- ${s}`).join('\n');
+            const msgField = document.getElementById('mesaj');
+            msgField.value = `Bună ziua! Doresc verificare / intervenție pentru:\n${lines}\n\nObservații suplimentare: `;
             toggleListModal();
             document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
             document.getElementById('nume').focus();
-            showToast('Serviciile au fost adăugate în formular!');
+            showToast('Lucrările au fost trecute în formular');
         }
 
-        let toastTimeout;
-        function showToast(message) {
+        let toastTimer;
+        function showToast(msg) {
             const toast = document.getElementById('toast-notification');
-            document.getElementById('toast-message').textContent = message;
+            document.getElementById('toast-message').textContent = msg;
             toast.classList.remove('translate-y-24', 'opacity-0');
-            clearTimeout(toastTimeout);
-            toastTimeout = setTimeout(() => {
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
                 toast.classList.add('translate-y-24', 'opacity-0');
-            }, 3000);
+            }, 2600);
         }
 
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -892,27 +854,24 @@
             e.preventDefault();
             formFeedback.classList.remove('hidden');
             contactForm.reset();
-            showToast('Solicitarea a fost înregistrată!');
+            showToast('Solicitare trimisă');
             setTimeout(() => formFeedback.classList.add('hidden'), 8000);
         });
 
-        function updateStatusBadge() {
-            const badge = document.getElementById('open-status-badge');
-            const heroPill = document.getElementById('hero-status-pill');
+        function updateLiveClockStatus() {
+            const dot = document.getElementById('live-dot');
+            const statusText = document.getElementById('live-status-text');
             const now = new Date();
-            const hour = now.getHours();
-            const isOpen = hour >= 8 && hour < 17;
+            const totalMins = now.getHours() * 60 + now.getMinutes();
+            const closesAt = 17 * 60 + 30;
+            const opensAt = 8 * 60;
 
-            if (isOpen) {
-                badge.textContent = 'Deschis';
-                badge.className = 'text-[11px] font-bold uppercase px-2.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30';
-                heroPill.textContent = 'Deschis • Până la 17:30';
-                heroPill.className = 'text-[11px] font-bold uppercase px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30';
+            if (totalMins >= opensAt && totalMins < closesAt) {
+                dot.className = 'w-2 h-2 rounded-full bg-emerald-400';
+                statusText.textContent = 'Deschis acum • Închide la 17:30 • Calea Timișorii 209, Arad';
             } else {
-                badge.textContent = 'Închide la 17:30';
-                badge.className = 'text-[11px] font-bold uppercase px-2.5 py-0.5 rounded bg-volt/20 text-volt border border-volt/30';
-                heroPill.textContent = 'Închide la 17:30';
-                heroPill.className = 'text-[11px] font-bold uppercase px-2.5 py-1 rounded bg-volt/20 text-volt border border-volt/30';
+                dot.className = 'w-2 h-2 rounded-full bg-copper';
+                statusText.textContent = 'Program standard până la 17:30 • Calea Timișorii 209, Arad';
             }
         }
 
@@ -920,7 +879,7 @@
             document.getElementById('current-year').textContent = new Date().getFullYear();
             renderServices('toate');
             updateListUI();
-            updateStatusBadge();
+            updateLiveClockStatus();
         });
     </script>
 </body>
